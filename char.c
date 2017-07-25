@@ -108,28 +108,98 @@ int main() {
 	printf("\nstringy: %s\n", stringy);
 
 
-	// //*string5[0] = (char*) malloc(size);
-	// //strcpy(string5[0], string1);
-	// //string2[0] = (char **) malloc(sizeof(*string1));
+	/**
+	*
+	* Declaring a vector
+	*
+	*/
+	char *fstringx[] = {};
+
+	/**
+	*
+	* Allocating memory for the vet
+	*
+	*/
+	fstringx[0] = (char*) malloc(size * sizeof(char));
+
+	/**
+	*
+	* Copying content stringx to fstring
+	*
+	*/
+	strcpy(fstringx[0], stringx);
+
+	/**
+	*
+	* Showing the result stringy
+	*
+	*/
+	printf("\nfstringx: %s\n", fstringx[0]);
+
 	
+	/**
+	*
+	* Declaring a vector pointer to pointer
+	*
+	*/
+	// char **fstringy[] = {};
 
-	// string String = "jefferson name complete";
-	// string2 String2 = {"jefferson something", "something there"};
-	// string3 String3 = "Let's test a position.";
 
-	// char **array = (char**) malloc((10+1)*sizeof(char*));
-	// array[0] = "fluffy";
-	// array[1] = "small";
-	// array[2] = "bunny";
-	// array[3] = 0;
+	/**
+	*
+	* Declaring a string
+	*
+	*/
+	string String = "jefferson name complete";
 
-	// //char **array = (char**) malloc((10+1)*sizeof(char*));
+	/**
+	*
+	* Declaring a string {}
+	*
+	*/
+	string2 String2 = {"jefferson something", "something there"};
 
-	// int y[2][3] = { {10,20,30}, {100,200,300} }; 
+
+	/**
+	*
+	* Declaring a array
+	*
+	*/
+	char **array = (char**) malloc((10+1)*sizeof(char*));
+
+	/**
+	*
+	* Assigning values in our array
+	*
+	*/
+	array[0] = "fluffy";
+	array[1] = "small";
+	array[2] = "bunny";
+	array[3] = 0;
+
+	/**
+	*
+	* Declaring a y int
+	*
+	*/
+	int y[2][3] = { {10,20,30}, {100,200,300} };
+
+	/**
+	*
+	* Declaring a x char
+	*
+	*/
+	char x[2][3] = {"jef","ola"};
+
 	
-	// char x[2][3] = {"jef","ola"}; 
-	
-	// char* c[] = {"jef","ola","sel"}; 
+	/**
+	*
+	* Declaring pointer c
+	*
+	*/
+	char* c[] = {"jef","ola","sel"};
+
+
 	// char work[] = {"I work here"}; 
 	// char work2[] = {'A','B','C'}; 
 	// //char (*a3[])[] = { &"blah", &"hmm" };
