@@ -47,7 +47,7 @@ int main() {
 	* Defining a pointer with char and assigning a value
 	*
 	*/
-	char *stringx = "avocado";
+	char *stringx = "Avocado is delicious.";
 
 	/**
 	*
@@ -85,18 +85,28 @@ int main() {
 	printf("\nfstring: %s\n", fstring[0]);
 
 	
-	// char *string1 = "avocado";
-	// int size = strlen(string1) + 1;
-	// //char string2[strlen(string1)];
+	/**
+	*
+	* Second example
+	*
+	*/
+	char stringy[strlen(stringx)];
 
-	// string5[0] = (char*) malloc(size * sizeof(char));
-	// //string5[1] = (char*) malloc(size * sizeof(char));
-	// strcpy(string5, string1);
-	// printf("\nstring5: %s", string5);
 
-	// string5[1] = (char*) malloc(size * sizeof(char));
-	// strcpy(string5, string1);
-	// printf("\nstring5: %s", string5);	
+	/**
+	*
+	* Copying content stringx to fstring
+	*
+	*/
+	strcpy(stringy, stringx);
+
+	/**
+	*
+	* Showing the result stringy
+	*
+	*/
+	printf("\nstringy: %s\n", stringy);
+
 
 	// //*string5[0] = (char*) malloc(size);
 	// //strcpy(string5[0], string1);
