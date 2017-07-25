@@ -46,19 +46,49 @@ typedef char *string3;
 int main(){
 
 
+	
+	/**
+	*
+	* Defining a pointer with char and assigning a value
+	*
+	*/
+	char *stringx = "avocado";
+
 	/**
 	*
 	* Defining a char pointer statically
 	*
 	*/
-	char *string1 = "avocado";
+	char *fstring[0];
+
+	/**
+	*
+	* Knowing the size of the char
+	*
+	*/
+	int size = strlen(stringx) + 1;
 
 	/**
 	*
 	* Our first example using pointer char
 	*
 	*/
-	string5[0] = (char*) malloc(size * sizeof(char));
+	fstring[0] = (char*) malloc(size * sizeof(char));
+
+	/**
+	*
+	* Copying content stringx to fstring
+	*
+	*/
+	strcpy(fstring[0], stringx);
+	
+	/**
+	*
+	* Showing the result
+	*
+	*/
+	printf("\nfstring: %s\n", fstring[0]);
+}
 ```
 
 # Compiling
