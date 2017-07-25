@@ -60,3 +60,10 @@ int main(){
 	*/
 	string5[0] = (char*) malloc(size * sizeof(char));
 ```
+
+# Compiling
+
+```c
+$ gcc char.c -o char
+
+```
