@@ -117,7 +117,7 @@ int main() {
 
 	/**
 	*
-	* Allocating memory for the vet
+	* Allocating memory for the vect
 	*
 	*/
 	fstringx[0] = (char*) malloc(size * sizeof(char));
@@ -200,24 +200,59 @@ int main() {
 	char* c[] = {"jef","ola","sel"};
 
 
-	// char work[] = {"I work here"}; 
-	// char work2[] = {'A','B','C'}; 
-	// //char (*a3[])[] = { &"blah", &"hmm" };
+	/**
+	*
+	* Declaring vect work
+	*
+	*/
+	char work[] = {"I work here"};
+
+	/**
+	*
+	* Declaring vect work2
+	*
+	*/
+	char work2[] = {'A','B','C'};
+
 	
-	// char* strings[3];
-	// strings[0] = "foo";
-	// strings[1] = "bar";
-	// strings[2] = "baz";
-	// strings[3] = "jef";
-	// strings[4] = "je2";
+	/**
+	*
+	* Declaring pointer vect strings
+	*
+	*/	
+	char* strings[3];
+
+	strings[0] = "foo";
+	strings[1] = "bar";
+	strings[2] = "baz";
+	strings[3] = "jef";
+	strings[4] = "je2";
 	
 
-	// char a1[][14] = { "blah", "hmm" };
-	// char* a2[] = { "blah", "hmm" };
-	// char (*a3[])[] = { &"blah", &"hmm" };  // only since you brought up the syntax -
-
-	// printf("%s :",a1[0]); // prints blah
-	// printf("%s :",a2[0]); // prints blah
-	// printf("%s :", *a3[0]); // prints blah
+	/**
+	*
+	* Declaring a1
+	*
+	*/	
+	char a1[][14] = { "Hello", "folks" };
 	
+	/**
+	*
+	* Declaring a2
+	*
+	*/
+	char* a2[] = { "Hello", "guys" };
+
+	/**
+	*
+	* Declaring a3
+	*
+	*/
+	char (*a3[])[] = { &"Guys", &"People" };
+	
+
+	printf("\n[%s]  [%s]\n",a1[0], a1[1]);
+	printf("\n[%s] [%s]\n",a2[0], a2[1]);
+	printf("\n[%s] [%s]\n", *a3[0], *a3[1]);
+		
 }
