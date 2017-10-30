@@ -11,94 +11,99 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct  Alunos {
+//Struc Student
+struct  Student {
 
-	int matricula;
-	char nome[40];
+	int registry;
+	char name[40];
 
 };
 
-
-void insertSortMatricula(struct Alunos *alunos, int size)
+// ordered by student record 
+void insertSortregistry(struct Student *pupil, int size)
 {
    int i, j;
 
-   struct Alunos aux;
+   struct Student aux;
 
    for(i = 1; i < size; i++)
    {
 
-      aux = alunos[i];
+      aux = pupil[i];
 
-      for(j=i; (j>0) && (aux.matricula < alunos[j-1].matricula); j-- )
+      for(j=i; (j>0) && (aux.registry < pupil[j-1].registry); j-- )
       {
-         alunos[j] = alunos[j - 1];
+         pupil[j] = pupil[j - 1];
       }
 
-      alunos[j] = aux;
+      pupil[j] = aux;
    }
 }
 
-void insertSortNome(struct Alunos *alunos, int size)
+// ordered by student name
+void insertSortname(struct Student *pupil, int size)
 {
    int i, j;
 
-   struct Alunos aux;
+   struct Student aux;
 
    for(i = 1; i < size; i++)
    {
 
-      aux = alunos[i];
+      aux = pupil[i];
 
-      for(j=i; (j>0) && (strcmp(aux.nome, alunos[j-1].nome) < 0); j-- )
+      for(j=i; (j>0) && (strcmp(aux.name, pupil[j-1].name) < 0); j-- )
       {
-         alunos[j] = alunos[j - 1];
+         pupil[j] = pupil[j - 1];
       }
 
-      alunos[j] = aux;
+      pupil[j] = aux;
    }
 }
 
+// start main
 int main(){
 	
 	int size = 2;
 
-	// defindo vetor 6 alunos
-	struct Alunos alunos[size];
+	// defindo vetor 6 pupil
+	struct Student pupil[size];
 
 	for(int count = 0 ; count < size; count++)
     {
         fflush(stdin);
 
-        printf("\nNome do aluno %d: ", count+1);
-        scanf("%s",alunos[count].nome);
+        printf("\nStudent's name %d: ", count+1);
+        scanf("%s",pupil[count].name);
 
-        printf("\nMatricula: ");
-        scanf("%d", &alunos[count].matricula);
+        printf("\nStudent record : ");
+        scanf("%d", &pupil[count].registry);
     }
 
-    insertSortMatricula(alunos, size);
+    insertSortregistry(pupil, size);
 
-
+    printf("\n################ listing order by enrollment ##################\n");
     for(int count = 0 ; count < size ; count++)
     {	
     	
-    	printf("\nMatricula: %.2d\n", alunos[count].matricula);
+    	printf("\nregistry: %.2d\n", pupil[count].registry);
 
         // printf("\nAluno %d\n", count+1);
-        printf("Nome: %s\n",alunos[count].nome);
+        printf("name: %s\n",pupil[count].name);
         
     }
 
-    insertSortNome(alunos, size);
+    insertSortname(pupil, size);
+
+    printf("\n################## listing order by name ####################\n");
 
     for(int count = 0 ; count < size ; count++)
     { 
       
-      printf("\nMatricula: %.2d\n", alunos[count].matricula);
+      printf("\nStudent record : %.2d\n", pupil[count].registry);
 
         // printf("\nAluno %d\n", count+1);
-        printf("Nome: %s\n",alunos[count].nome);
+        printf("Student's name: %s\n",pupil[count].name);
         
     }
 
