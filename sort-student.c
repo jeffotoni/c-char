@@ -19,18 +19,38 @@ struct  Alunos {
 };
 
 
-void insertSort(struct Alunos *alunos, int size)
+void insertSortMatricula(struct Alunos *alunos, int size)
 {
    int i, j;
 
    struct Alunos aux;
 
-   for(i=1; i<size; i++)
+   for(i = 1; i < size; i++)
    {
 
       aux = alunos[i];
 
       for(j=i; (j>0) && (aux.matricula < alunos[j-1].matricula); j-- )
+      {
+         alunos[j] = alunos[j - 1];
+      }
+
+      alunos[j] = aux;
+   }
+}
+
+void insertSortNome(struct Alunos *alunos, int size)
+{
+   int i, j;
+
+   struct Alunos aux;
+
+   for(i = 1; i < size; i++)
+   {
+
+      aux = alunos[i];
+
+      for(j=i; (j>0) && (strcmp(aux.nome, alunos[j-1].nome) < 0); j-- )
       {
          alunos[j] = alunos[j - 1];
       }
@@ -57,13 +77,25 @@ int main(){
         scanf("%d", &alunos[count].matricula);
     }
 
-    insertSort(alunos, size);
+    insertSortMatricula(alunos, size);
 
 
     for(int count = 0 ; count < size ; count++)
     {	
     	
     	printf("\nMatricula: %.2d\n", alunos[count].matricula);
+
+        // printf("\nAluno %d\n", count+1);
+        printf("Nome: %s\n",alunos[count].nome);
+        
+    }
+
+    insertSortNome(alunos, size);
+
+    for(int count = 0 ; count < size ; count++)
+    { 
+      
+      printf("\nMatricula: %.2d\n", alunos[count].matricula);
 
         // printf("\nAluno %d\n", count+1);
         printf("Nome: %s\n",alunos[count].nome);
